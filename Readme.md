@@ -1,7 +1,8 @@
 # Личный проект «Седона»
 
 * Студент: [Артем Шеховцов](https://up.htmlacademy.ru/htmlcss/39/user/1305483).
-* Наставник: `Неизвестно`.
+* Наставник: [Антон Варнавский](https://htmlacademy.ru/profile/anton_varnauski).
+* Сайт: [Мой проект Седона](https://freemanvrn.github.io/1305483-sedona-39/).
 
 ---
 
