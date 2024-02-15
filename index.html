@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Город Седона, Аризона</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
     <header class="page-header" data-test="header">
@@ -47,7 +48,7 @@
       </section>
       <section class="advantages" data-test="advantages">
         <h2 class="visually-hidden">Почему нужно ехать именно к нам</h2>
-        <article class="advantages-item">
+        <article class="advantages-item advantages-item-picture">
           <h3>Настоящий городок</h3>
           <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
           <img class="advantages-image" src="images/real-city.jpg" width="800" height="385" alt="Фото исторических зданий на фоне цветов и гор">
@@ -56,7 +57,7 @@
           <h3>Небольшая площадь</h3>
           <p>Все достопримечательности находятся очень близко</p>
         </article>
-        <article class="advantages-item">
+        <article class="advantages-item advantages-item-road">
           <h3>Красивая дорога</h3>
           <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
         </article>
@@ -64,7 +65,7 @@
           <h3>Мало туристов</h3>
           <p>Большинство едет в Гранд Каньон и толпится там</p>
         </article>
-        <article class="advantages-item">
+        <article class="advantages-item advantages-item-picture">
           <h3>Там есть мост дьявола</h3>
           <p>Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
           <img class="advantages-image" src="images/devil-bridge.jpg" width="800" height="385" alt="Фото моста дьявола">
@@ -73,12 +74,12 @@
       <section class="infrastructure">
         <h2 class="visually-hidden">Инфраструктура городка</h2>
         <p class="infrastructure-title">Приезжайте в Седону отдохнуть в комфорте и уюте!</p>
-        <p>Опытный персонал и качественное обслуживание!</p>
+        <p class="infrastructure-description">Опытный персонал и качественное обслуживание!</p>
         <article class="infrastructure-item">
           <h3>Жилье</h3>
           <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
         </article>
-        <article class="infrastructure-item">
+        <article class="infrastructure-item infrastructure-item-active">
           <h3>Еда</h3>
           <p>Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
         </article>
@@ -88,19 +89,19 @@
         </article>
       </section>
       <section class="interest">
-        <p>Заинтересовались?</p>
-        <p>Укажите предполагаемые даты поездки,и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <h2 class="interest-title">Заинтересовались?</h2>
+        <p class="interest-description">Укажите предполагаемые даты поездки,и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         <button class="infrastructure-button" type="button">Поиск гостиницы в Седоне</button>
       </section>
       <section class="subscription" data-test="subscribe">
         <h2 class="subscription-title">Подпишитесь на рассылку</h2>
-        <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
+        <p class="subscription-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
-          <label class="visually-hidden" for="subscription-email">
+          <label class="visually-hidden">
             Укажите Ваш e-mail
+            <input type="email" class="subscription-email" name="subscription-email" placeholder="Ваш e-mail" required>
           </label>
-          <input type="email" id="subscription-email" name="subscription-email" placeholder="Ваш e-mail" required>
-          <button class="subscription-button" type="submit">Подписаться</button>
+           <button class="subscription-button" type="submit">Подписаться</button>
         </form>
       </section>
     </main>
@@ -125,7 +126,7 @@
         </ul>
       <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
       <a class="contacts-web" href="https://htmlacademy.ru/">
-        <img src="images/html-academy.png" width="115" height="33" alt="Логотип HTML Academy">
+        <span class="visually-hidden">HTML Academy</span>
       </a>
     </footer>
   </body>
