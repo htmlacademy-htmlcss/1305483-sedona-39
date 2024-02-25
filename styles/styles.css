@@ -54,17 +54,17 @@ body {
   max-width: 1060px;
   padding: 0 70px;
   width: 100%;
-  height: 64px;
+  min-height: 64px;
   z-index: 1;
 }
 
 .navigation {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: flex-start;
   width: 962px;
-  margin: 0 auto;
-  margin-left: 30px;
+  margin: 0 auto 0 30px;
 }
 
 .navigation-list {
@@ -76,12 +76,20 @@ body {
 }
 
 .navigation-item {
-  margin: 20px 16px;
+  align-items: center;
+}
+
+.navigation-link {
+  display: block;
+  padding: 20px 16px;
 }
 
 .navigation-item-current a {
-  padding-bottom: 18px;
-  border-bottom: 2px solid #756257;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #756257;
+  text-underline-offset: 24px;
 }
 
 .navigation-user {
@@ -91,6 +99,8 @@ body {
   margin: 0;
   padding: 0;
   margin-left: auto;
+  max-width: 86px;
+  flex-shrink: 0;
 }
 
 .navigation-user-item {
@@ -126,7 +136,7 @@ body {
 
 .header-button {
   padding: 8px 34px;
-  margin: 14px 0 14px 20px;
+  margin: 14px 0 18px 20px;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
@@ -138,6 +148,7 @@ body {
   text-transform: uppercase;
   border-radius: 4px;
   border: none;
+  flex-shrink: 0;
 }
 
 /* Main */
@@ -494,11 +505,11 @@ body {
   margin-top: 9px;
 }
 
-.contacts-web svg :hover, .contacts-web svg :focus {
+.contacts-web:hover path, .contacts-web:focus path {
   fill: #756157;
 }
 
-.contacts-web svg :active {
+.contacts-web:active path {
   fill: rgba(117, 97, 87, 0.3);
 }
 
@@ -540,7 +551,7 @@ body {
 }
 
 .breadcrumbs-link {
-  font-style: 16px;
+  font-size: 16px;
   line-height: 21px;
   color: #ffffff;
   font-weight: inherit;
@@ -561,7 +572,7 @@ body {
 }
 
 .catalog-filter-title {
-  font-style: 20px;
+  font-size: 20px;
   line-height: 24px;
   color: #ffffff;
   font-weight: 700;
@@ -575,7 +586,7 @@ body {
 }
 
 .catalog-filter-item {
-font-style: 16px;
+font-size: 16px;
 line-height: 21px;
 color: #ffffff;
 font-weight: inherit;
@@ -621,14 +632,14 @@ margin-bottom: 16px;
 }
 
 .control {
-  font-style: 18px;
+  font-size: 18px;
   line-height: 24px;
   color: inherit;
   font-weight: inherit;
 }
 
 .control-input {
-  font-style: 18px;
+  font-size: 18px;
   line-height: 24px;
   color: inherit;
   font-weight: 700;
@@ -674,7 +685,7 @@ margin-bottom: 16px;
 }
 
 .select-control option {
-  font-style: 18px;
+  font-size: 18px;
   line-height: 21px;
   color: #333333;
   font-weight: inherit;
@@ -706,7 +717,7 @@ margin-bottom: 16px;
 }
 
 .sort.visually-hidden {
-  font-style: 18px;
+  font-size: 18px;
   line-height: 21px;
   font-weight: inherit;
   color: #000000;
@@ -747,6 +758,8 @@ margin-bottom: 16px;
 .product-card-image {
   display: block;
   margin-bottom: 16px;
+  max-width: 100%;
+  height: auto;
 }
 
 .product-card-title {
@@ -755,6 +768,7 @@ margin-bottom: 16px;
   color: inherit;
   font-weight: 700;
   margin-bottom: 16px;
+  hyphens: auto;
 }
 
 .product-price {
