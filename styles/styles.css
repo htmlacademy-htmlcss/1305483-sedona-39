@@ -49,13 +49,13 @@ body {
 /* Header */
 
 .page-header {
-  background-color: #ffffff;
   display: flex;
   max-width: 1060px;
   padding: 0 70px;
   width: 100%;
   min-height: 64px;
   z-index: 1;
+  margin-bottom: -10px;
 }
 
 .navigation {
@@ -99,12 +99,12 @@ body {
   margin: 0;
   padding: 0;
   margin-left: auto;
-  max-width: 86px;
+  max-width: 96px;
   flex-shrink: 0;
 }
 
 .navigation-user-item {
-  margin: 22px 12px;
+  align-items: center;
 }
 
 .navigation-link, .navigation-user-link-search, .navigation-user-link-favorite {
@@ -116,7 +116,14 @@ body {
   text-align: center;
 }
 
+.navigation-user-link-search {
+  display: block;
+  padding: 22px 12px;
+}
+
 .navigation-user-link-favorite {
+  display: block;
+  padding: 22px 13px 23px 13px;
   position: relative;
 }
 
@@ -130,8 +137,8 @@ body {
   padding: 5px 5px 5px 4px;
   border-radius: 50%;
   position: absolute;
-  top: -10px;
-  left: 7px;
+  top: 11px;
+  left: 20px;
 }
 
 .header-button {
@@ -149,6 +156,20 @@ body {
   border-radius: 4px;
   border: none;
   flex-shrink: 0;
+}
+
+.header-button:hover, .header-button:focus, .interest-button:hover, .interest-button:focus, .product-button-more:hover, .product-button-more:focus {
+  background-color: #615048;
+}
+
+.header-button:active, .interest-button:active, .product-button-more:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #756157;
+}
+
+.header-button:disabled, .interest-button:disabled, .product-button-more:disabled, .subscription-button:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
 }
 
 /* Main */
@@ -363,6 +384,20 @@ body {
   margin-bottom: 96px;
 }
 
+interest-button:hover, .interest-button:focus {
+  background-color: #615048;
+}
+
+.interest-button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #756157;
+}
+
+.interest-button:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
+}
+
 .subscription {
   background-color: #e2e7dd;
   background-image: url("../images/subscribe-background.jpg");
@@ -426,6 +461,20 @@ body {
   border-radius: 0 4px 4px 0;
   border: none;
   padding: 8px 50px;
+}
+
+.subscription-button:hover, .subscription-button:focus {
+  background-color: #68a2ca;
+}
+
+.subscription-button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #82b3d3;
+}
+
+.subscription-button:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
 }
 
 /* Footer */
@@ -559,6 +608,14 @@ body {
   margin-right: 29px;
 }
 
+.breadcrumbs-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .catalog-filter {
   display: flex;
   flex-wrap: wrap;
@@ -615,6 +672,20 @@ margin-bottom: 16px;
   margin-top: auto;
 }
 
+.catalog-button-enter:hover, .catalog-button-enter:focus {
+  background-color: #68a2ca;
+}
+
+.catalog-button-enter:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #82b3d3;
+}
+
+.catalog-button-enter:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
+}
+
 .catalog-button-default {
   font-family: inherit;
   font-size: 16px;
@@ -628,7 +699,28 @@ margin-bottom: 16px;
   border-radius: 4px;
   border: none;
   margin-top: 32px;
-  padding: 8px 57px;
+  padding: 8px 50px;
+}
+
+.catalog-button-default:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.catalog-button-default:focus {
+  padding: 5px 47px;
+  border: 3px solid #83B3D3;
+}
+
+.catalog-button-default:active {
+  padding: 8px 50px;
+  color: rgba(255, 255, 255, 0.3);
+  border: none;
+}
+
+.catalog-button-default:disabled {
+  padding: 8px 50px;
+  color: rgba(255, 255, 255, 0.1);
+  border: none;
 }
 
 .control {
@@ -716,6 +808,19 @@ margin-bottom: 16px;
   padding: 11px 14px;
 }
 
+.sort-link:hover {
+  border: 2px solid #000000;
+}
+
+.sort-link:focus {
+  outline: none;
+  border: 2px solid #68a2ca;
+}
+
+.sort-link:active {
+  border: 2px solid #000000;
+}
+
 .sort.visually-hidden {
   font-size: 18px;
   line-height: 21px;
@@ -736,15 +841,16 @@ margin-bottom: 16px;
   padding-bottom: 40px;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 40px;
+  gap: 20px;
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
   width: 300px;
   padding: 19px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
-  margin-right: 20px;
-  margin-bottom: 20px;
 }
 
 .product-card:nth-child(3n) {
@@ -753,6 +859,10 @@ margin-bottom: 16px;
 
 .product-card:last-child {
   margin-bottom: 0;
+}
+
+.product-card-link {
+  flex-grow: 1;
 }
 
 .product-card-image {
@@ -769,6 +879,10 @@ margin-bottom: 16px;
   font-weight: 700;
   margin-bottom: 16px;
   hyphens: auto;
+}
+
+.product-description {
+  align-items: flex-end;
 }
 
 .product-price {
@@ -808,6 +922,20 @@ margin-bottom: 16px;
   padding: 8px 26px;
 }
 
+.product-button-more:hover, .product-button-more:focus {
+  background-color: #615048;
+}
+
+.product-button-more:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #756157;
+}
+
+.product-button-more:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
+}
+
 .product-button-favorite {
   font-family: inherit;
   font-size: 16px;
@@ -823,7 +951,21 @@ margin-bottom: 16px;
   padding: 8px 20px;
 }
 
-.product-button-favorite-active {
+.product-button-favorite:hover, .product-button-favorite:focus {
+  background-color: #68a2ca;
+}
+
+.product-button-favorite:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #82b3d3;
+}
+
+.product-button-favorite:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
+}
+
+.product-button-favorite-active, .product-button-favorite-active:hover, .product-button-favorite-active:focus, .product-button-favorite-active:active, .product-button-favorite-active:disabled {
   background-color: #7db54f;
 }
 
@@ -855,10 +997,7 @@ margin-bottom: 16px;
   display: flex;
   list-style-type: none;
   margin-bottom: 60px;
-}
-
-.pagination-item {
-  margin-right: 8px;
+  gap: 8px;
 }
 
 .pagination-link {
@@ -874,12 +1013,21 @@ margin-bottom: 16px;
   padding: 12px 24px;
 }
 
-.pagination-link-current {
+.pagination-link:hover, .pagination-link:focus {
+  background-color: #68a2ca;
+}
+
+.pagination-link:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #82b3d3;
+}
+
+.pagination-link-current, .pagination-link-current:hover, .pagination-link-current:focus, .pagination-link-current:active {
   color: #000000;
   background-color: #f2f2f2;
 }
 
-.pagination-link-crumbs {
+.pagination-link-crumbs, .pagination-link-crumbs:hover, .pagination-link-crumbs:focus, .pagination-link-crumbs:active {
   font-size: 22px;
   line-height: 26px;
   font-weight: normal;
