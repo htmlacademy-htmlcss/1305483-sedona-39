@@ -58,6 +58,11 @@ body {
   margin-bottom: -10px;
 }
 
+.page-header-logo-link:hover img,
+.page-header-logo-link:focus img {
+  opacity: 0.8;
+}
+
 .navigation {
   display: flex;
   flex-wrap: nowrap;
@@ -199,6 +204,7 @@ body {
   border-radius: 4px;
   border: none;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .header-button:hover,
@@ -276,13 +282,11 @@ body {
   margin-bottom: 64px;
 }
 
-.advantages-item,
-.infrastructure-item {
+.advantages-item {
   display: flex;
   flex-direction: column;
   width: 400px;
   background-color: rgba(131, 179, 211, 0.12);
-  align-items: center;
 }
 
 .advantages-item h3 {
@@ -353,17 +357,20 @@ body {
   margin-bottom: 102px;
 }
 
-.advantages-item-left .advantages-item-wrapper {
-  margin-left: 85px;
-}
-
 .advantages-item-right .advantages-item-wrapper {
   order: 1;
-  margin-right: 85px;
 }
 
 .advantages-image {
   display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  flex-basis: content;
+}
+
+.advantages-item-wrapper {
+  flex-grow: 1;
 }
 
 .infrastructure {
@@ -383,6 +390,14 @@ body {
 .infrastructure-wrapper {
   display: flex;
   flex-wrap: wrap;
+}
+
+.infrastructure-item {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: rgba(131, 179, 211, 0.12);
+  align-items: center;
 }
 
 .infrastructure-item:nth-child(even) {
@@ -466,6 +481,7 @@ body {
   padding: 8px 50px;
   margin: 0 auto;
   margin-bottom: 96px;
+  cursor: pointer;
 }
 
 .interest-button:hover,
@@ -501,7 +517,7 @@ body {
   font-weight: 700;
   color: #ffffff;
   margin-top: 96px;
-  margin-bottom: 22px;
+  margin-bottom: 21px;
 }
 
 .subscription-description {
@@ -555,6 +571,7 @@ body {
   border-radius: 0 4px 4px 0;
   border: none;
   padding: 8px 50px;
+  cursor: pointer;
 }
 
 .subscription-button:hover,
@@ -586,16 +603,16 @@ body {
 }
 
 .contacts-social-list {
-  margin: 0;
+  margin: 12px 0 0 12px;
   padding: 0;
   list-style: none;
-  width: 142px;
+  width: 144px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .contacts-social-item {
-  margin: 12px;
   width: 48px;
   height: 40px;
 }
@@ -641,6 +658,7 @@ body {
   color: inherit;
   text-decoration: none;
   margin-top: 5px;
+  padding-right: 6px;
 }
 
 .contacts-phone:hover,
@@ -665,6 +683,8 @@ body {
   fill: rgba(117, 97, 87, 0.3);
 }
 
+/* Modal */
+
 .modal-container {
   position: fixed;
   top: 0;
@@ -675,9 +695,11 @@ body {
   background-color: rgba(242, 242, 242, 0.8);
 }
 
-.modal-container-close {
+/*
+ .modal-container-close {
   display: none;
 }
+*/
 
 .modal {
   position: relative;
@@ -695,18 +717,38 @@ body {
 
 .modal-close-button {
   position: absolute;
-  padding: 24px;
+  padding: 26px;
   top: 65px;
-  right: 54px;
-  width: 14px;
-  height: 14px;
+  right: 52px;
   background-color: #f2f2f2;
   border: none;
-  background-image: url("../images/modal-close.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.modal-close-icon {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 18px;
+  left: 18px;
+}
+
+.modal-close-button:hover {
+  background-color: #e6e6e6;
+}
+
+.modal-close-button:focus {
+  background-color: #e6e6e6;
+  outline: 3px solid #83b3d3;
+}
+
+.modal-close-button:active {
+  background-color: #e6e6e6;
+}
+
+.modal-close-icon:active {
+  opacity: 0.3;
 }
 
 .modal-title {
@@ -718,7 +760,282 @@ body {
   text-transform: uppercase;
 }
 
+.modal-form {
+  display: grid;
+  grid-template-columns: 119px repeat(3, auto);
+  grid-template-rows: 1fr;
+  column-gap: 18px;
+}
 
+.check-in-date-label,
+.check-out-date-label,
+.adults-label {
+  grid-column: 1 / 2;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  padding-top: 12px;
+}
+
+.check-in-date-input,
+.check-out-date-input {
+  grid-column: 2 / -1;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  background-image: url("../images/modal-calendar.svg");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+}
+
+.check-in-date-text,
+.check-out-date-text {
+  grid-column: 2 / -1;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ff5757;
+  padding-top: 4px;
+  padding-left: 20px;
+  margin: 0;
+  margin-bottom: 23px;
+}
+
+.check-out-date-text {
+  grid-column: 2 / -1;
+  font-size: 16px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.check-in-date-input:hover,
+.check-out-date-input:hover {
+  background-color: #e6e6e6;
+}
+
+.check-in-date-input:focus,
+.check-out-date-input:focus {
+  background-color: #e6e6e6;
+  outline: 3px solid #83b3d3;
+}
+
+.adults-control {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 40px 31px 40px;
+  width: 111px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.modal-control-minus {
+  position: relative;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin: 14px 10px;
+  border-radius: 0 0 4px 4px;
+  color: rgba(0, 0, 0, 0.3);
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.modal-control-minus svg {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+}
+
+.modal-control-plus {
+  position: relative;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin: 14px 10px;
+  color: rgba(0, 0, 0, 0.3);
+  background-color: #f2f2f2;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+
+.modal-control-plus svg {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
+.modal-control-minus svg :hover,
+.modal-control-plus svg :hover {
+  fill: #000000;
+}
+
+.modal-control-minus:focus,
+.modal-control-plus:focus {
+  outline: 3px solid #82b3d3;
+  border-radius: 4px;
+}
+
+.modal-control-minus:focus svg {
+  fill: #000000;
+}
+
+.modal-control-plus:focus svg  {
+  fill: #000000;
+}
+
+.modal-control-minus svg :active,
+.modal-control-plus svg :active {
+  fill: rgba(0, 0, 0, 0.2);
+}
+
+.adults-input {
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-color: #f2f2f2;
+  margin: 14px 10px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.children-label {
+  grid-column: 3 / 4;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  padding-left: 3px;
+  display: flex;
+  width: 85px;
+  justify-self: end;
+  align-self: center;
+}
+
+.children-control {
+  grid-column: 4 / -1;
+  display: grid;
+  grid-template-columns: 40px 31px 40px;
+  width: 111px;
+  justify-self: end;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+}
+
+.children-input {
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-color: #f2f2f2;
+  margin: 14px 10px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.adults-input:hover,
+.children-input:hover {
+  opacity: 0.7;
+}
+
+.adults-input:focus,
+.children-input:focus {
+  outline: 3px solid #83b3d3;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.tooltip {
+  position: absolute;
+  right: 220px;
+  bottom: 180px;
+}
+
+.tooltip-toggle {
+  border: none;
+  margin-left: 6px;
+  margin-top: 2px;
+  background-color: #ffffff;
+}
+
+.tooltip-toggle .tooltip-icon :hover {
+  opacity: 0.7;
+}
+
+.tooltip-toggle:focus {
+  outline: 3px solid #83b3d3;
+  border-radius: 4px;
+}
+
+.tooltip-toggle .tooltip-icon :active {
+  opacity: 0.5;
+}
+
+.tooltip-text {
+  background-color: #333333;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 216px;
+  height: 110px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 19px 18px 13px 22px;
+  text-transform: none;
+  transform: translateX(-50%);
+  z-index: 1;
+  position: absolute;
+  display: none;
+  top: 44px;
+  left: 23px;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.tooltip-text:before {
+  content: "";
+  background-image: url("../images/arrow-tooltip.svg");
+  width: 19px;
+  height: 9px;
+  position: absolute;
+  top: -9px;
+  left: 120px;
+}
+
+.modal-form-submit {
+  grid-column: 1 / -1;
+  padding: 18px 0;
+  background-color: #83b3d3;
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-top: 48px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+}
+
+.modal-form-submit:hover,
+.modal-form-submit:focus {
+  background-color: #68a2ca;
+}
+
+.modal-form-submit:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #82b3d3;
+}
 
 /* Catalog filter */
 
@@ -810,7 +1127,7 @@ body {
 }
 
 .filter-group-price {
-  margin-left: 78px;
+  margin-left: 80px;
   width: 288px;
 }
 
@@ -834,6 +1151,11 @@ line-height: 21px;
 color: #ffffff;
 font-weight: inherit;
 margin-bottom: 16px;
+}
+
+.filter-group-checkbox {
+  max-width: 150px;
+  margin-right: 67px;
 }
 
 .checkbox-label,
@@ -881,6 +1203,7 @@ margin-bottom: 16px;
   line-height: 23px;
   padding-left: 36px;
   cursor: pointer;
+  hyphens: auto;
 }
 
 .checkbox-input[type="checkbox"]:checked + .checkbox-mark::before {
@@ -893,6 +1216,10 @@ margin-bottom: 16px;
   content: "";
   top: 6px;
   left: 5px;
+}
+
+.filter-group-radio {
+  max-width: 141px;
 }
 
 .radio-label {
@@ -934,6 +1261,7 @@ margin-bottom: 16px;
   line-height: 23px;
   padding-left: 36px;
   cursor: pointer;
+  hyphens: auto;
 }
 
 .radio-input[type="radio"]:checked + .radio-mark::before {
@@ -967,6 +1295,7 @@ margin-bottom: 16px;
   border-radius: 4px;
   border: none;
   padding: 8px 50px;
+  cursor: pointer;
 }
 
 .catalog-button-enter:hover,
@@ -999,6 +1328,7 @@ margin-bottom: 16px;
   margin-top: 32px;
   margin-bottom: 13px;
   padding: 8px 50px;
+  cursor: pointer;
 }
 
 .catalog-button-default:hover {
@@ -1058,6 +1388,7 @@ margin-bottom: 16px;
   color: #000000;
   border: none;
   background-color: #f2f2f2;
+  appearance: textfield;
 }
 
 .control-input-min {
@@ -1359,6 +1690,7 @@ input::-webkit-inner-spin-button {
   border-radius: 4px;
   border: none;
   padding: 8px 20px;
+  cursor: pointer;
 }
 
 .product-button-favorite:hover,
