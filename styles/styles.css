@@ -243,6 +243,7 @@ body {
   padding-top: 51px;
   padding-bottom: 82px;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .advantages-title,
@@ -553,9 +554,14 @@ body {
   background-color: #e6e6e6;
 }
 
-.subscription-email:focus {
+.subscription-email:focus,
+.subscription-email:active {
   background-color: #e6e6e6;
   outline: 3px solid #83b3d3;
+}
+
+.subscription-email:disabled {
+  opacity: 0.5;
 }
 
 .subscription-button {
@@ -599,7 +605,7 @@ body {
   justify-content: space-between;
   padding-left: 70px;
   padding-right: 70px;
-  padding-bottom: 17px;
+  padding-bottom: 26px;
 }
 
 .contacts-social-list {
@@ -659,6 +665,7 @@ body {
   text-decoration: none;
   margin-top: 5px;
   padding-right: 6px;
+  max-width: 360px;
 }
 
 .contacts-phone:hover,
@@ -816,9 +823,16 @@ body {
 }
 
 .check-in-date-input:focus,
-.check-out-date-input:focus {
+.check-out-date-input:focus,
+.check-in-date-input:active,
+.check-out-date-input:active {
   background-color: #e6e6e6;
   outline: 3px solid #83b3d3;
+}
+
+.check-in-date-input:disabled,
+.check-out-date-input:disabled {
+  background-color: #e6e6e6;
 }
 
 .adults-control {
@@ -867,8 +881,8 @@ body {
   left: 3px;
 }
 
-.modal-control-minus svg :hover,
-.modal-control-plus svg :hover {
+.modal-control-minus:hover path,
+.modal-control-plus:hover path {
   fill: #000000;
 }
 
@@ -882,13 +896,18 @@ body {
   fill: #000000;
 }
 
-.modal-control-plus:focus svg  {
+.modal-control-plus:focus svg {
   fill: #000000;
 }
 
-.modal-control-minus svg :active,
-.modal-control-plus svg :active {
+.modal-control-minus:active path,
+.modal-control-plus:active path {
   fill: rgba(0, 0, 0, 0.2);
+}
+
+.modal-control-minus:disabled path,
+.modal-control-plus:disabled path {
+  fill: rgba(0, 0, 0, 0.1);
 }
 
 .adults-input {
@@ -943,10 +962,17 @@ body {
 }
 
 .adults-input:focus,
-.children-input:focus {
+.children-input:focus,
+.adults-input:active,
+.children-input:active {
   outline: 3px solid #83b3d3;
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+.adults-input:disabled,
+.children-input:disabled {
+  opacity: 0.5;
 }
 
 .tooltip {
@@ -962,7 +988,7 @@ body {
   background-color: #ffffff;
 }
 
-.tooltip-toggle .tooltip-icon :hover {
+.tooltip-toggle .tooltip-icon:hover {
   opacity: 0.7;
 }
 
@@ -971,8 +997,12 @@ body {
   border-radius: 4px;
 }
 
-.tooltip-toggle .tooltip-icon :active {
+.tooltip-toggle .tooltip-icon:active {
   opacity: 0.5;
+}
+
+.tooltip-toggle .tooltip-icon:disabled {
+  opacity: 0.3;
 }
 
 .tooltip-text {
@@ -1033,6 +1063,11 @@ body {
 .modal-form-submit:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #82b3d3;
+}
+
+.modal-form-submit:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
 }
 
 /* Catalog filter */
@@ -1197,6 +1232,10 @@ margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.checkbox-label:disabled {
+  color: rgba(255, 255, 255, 0.2);
+}
+
 .checkbox-name {
   line-height: 23px;
   padding-left: 36px;
@@ -1253,6 +1292,10 @@ margin-bottom: 16px;
 
 .radio-label:active > .radio-mark {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.radio-label:disabled {
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .radio-name {
@@ -1401,9 +1444,14 @@ margin-bottom: 16px;
   background-color: #e6e6e6;
 }
 
-.control-input:focus {
+.control-input:focus,
+.control-input:active {
   background-color: #e6e6e6;
   outline: 3px solid #83b3d3;
+}
+
+.control-input:disabled {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 input::-webkit-outer-spin-button,
@@ -1444,6 +1492,10 @@ input::-webkit-inner-spin-button {
 
 .range-toggle:active {
   outline: 2px solid #83b3d3;
+}
+
+.range-toggle:disabled {
+  outline: rgba(255, 255, 255, 0.3);
 }
 
 .toggle-min {
@@ -1841,9 +1893,4 @@ input::-webkit-inner-spin-button {
 
 .subscription-description-catalog {
   color: #333333;
-}
-
-.subscription-email-catalog {
-  background-color: #f2f2f2;
-  border: none;
 }
