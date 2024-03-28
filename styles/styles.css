@@ -905,8 +905,8 @@ body {
   fill: rgba(0, 0, 0, 0.2);
 }
 
-.modal-control-minus:disabled path,
-.modal-control-plus:disabled path {
+.modal-control-minus:disabled,
+.modal-control-plus:disabled {
   fill: rgba(0, 0, 0, 0.1);
 }
 
@@ -1001,7 +1001,7 @@ body {
   opacity: 0.5;
 }
 
-.tooltip-toggle .tooltip-icon:disabled {
+.tooltip-toggle:disabled {
   opacity: 0.3;
 }
 
@@ -1232,7 +1232,7 @@ margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.checkbox-label:disabled {
+.checkbox-input:disabled {
   color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1294,7 +1294,7 @@ margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.radio-label:disabled {
+.radio-input:disabled {
   color: rgba(255, 255, 255, 0.2);
 }
 
