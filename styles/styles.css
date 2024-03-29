@@ -220,6 +220,7 @@ body {
 .header-button:disabled {
   color: #ffffff;
   background-color: #e5e5e5;
+  cursor: default;
 }
 
 /* Main */
@@ -498,6 +499,7 @@ body {
 .interest-button:disabled {
   color: #ffffff;
   background-color: #e5e5e5;
+  cursor: default;
 }
 
 .subscription {
@@ -593,6 +595,7 @@ body {
 .subscription-button:disabled {
   color: #ffffff;
   background-color: #e5e5e5;
+  cursor: default;
 }
 
 /* Footer */
@@ -907,6 +910,12 @@ body {
 
 .modal-control-minus:disabled,
 .modal-control-plus:disabled {
+  color: rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.modal-control-minus:disabled path,
+.modal-control-plus:disabled path {
   fill: rgba(0, 0, 0, 0.1);
 }
 
@@ -1294,7 +1303,7 @@ margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.radio-input:disabled {
+.radio-input:disabled + .radio-mark {
   color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1352,6 +1361,7 @@ margin-bottom: 16px;
 .catalog-button-enter:disabled {
   color: #ffffff;
   background-color: #e5e5e5;
+  cursor: default;
 }
 
 .catalog-button-default {
@@ -1392,6 +1402,7 @@ margin-bottom: 16px;
   padding: 8px 50px;
   color: rgba(255, 255, 255, 0.1);
   border: none;
+  cursor: default;
 }
 
 .catalog-filter-value {
@@ -1496,6 +1507,7 @@ input::-webkit-inner-spin-button {
 
 .range-toggle:disabled {
   outline: rgba(255, 255, 255, 0.3);
+  cursor: default;
 }
 
 .toggle-min {
@@ -1756,6 +1768,7 @@ input::-webkit-inner-spin-button {
 .product-button-favorite:disabled {
   color: #ffffff;
   background-color: #e5e5e5;
+  cursor: default;
 }
 
 .product-button-favorite-active {
