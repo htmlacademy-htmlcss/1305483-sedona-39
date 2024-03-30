@@ -836,7 +836,8 @@ body {
 
 .check-in-date-input:disabled,
 .check-out-date-input:disabled {
-  background-color: #e6e6e6;
+  background-color: rgba(242, 242, 242, 0.3);
+  outline: none;
   pointer-events: none;
 }
 
@@ -985,6 +986,7 @@ body {
 .children-input:disabled {
   opacity: 0.5;
   pointer-events: none;
+  outline: none;
 }
 
 .tooltip {
